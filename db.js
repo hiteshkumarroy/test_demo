@@ -24,7 +24,11 @@
 
 
 const mongoose = require('mongoose');
-const mongoURL='mongodb://localhost:27017/restaurent';
+require('dotenv').config();
+// const mongoURL='mongodb://localhost:27017/restaurent';
+const mongoURL= dburl
+
+
 mongoose.connect(mongoURL);
 const db=mongoose.connection;
 db.on("connected",()=>{

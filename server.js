@@ -102,6 +102,7 @@ const express=require('express');
 const menu=require('./models/menu.js');
 const app=express();
 const bodyParser=require('body-parser');
+require('dotenv').config();
 
 const db=require('./db.js');
 
@@ -176,7 +177,7 @@ app.get('/',(req,res)=>{
 
 
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("hi there this is room of your waiter");
 });
 
