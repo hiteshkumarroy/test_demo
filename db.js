@@ -23,13 +23,17 @@
 // module.exports=db;
 
 
-const mongoose = require('mongoose');
+
+
+
+
 require('dotenv').config();
+const mongoose = require('mongoose');
+
 // const mongoURL='mongodb://localhost:27017/restaurent';
-const mongoURL= dburl
 
-
-mongoose.connect(mongoURL);
+mongoose.connect(process.env.dburl);
+// mongoose.connect(mongoURL);
 const db=mongoose.connection;
 db.on("connected",()=>{
     console.log("database server connected");

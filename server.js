@@ -97,16 +97,16 @@
 //     console.log("room no of waiter is 3000");
 // });
 
-
+require('dotenv').config();
 const express=require('express');
 const menu=require('./models/menu.js');
 const app=express();
 const bodyParser=require('body-parser');
-require('dotenv').config();
 
+  
 const db=require('./db.js');
 
-app.use(bodyParser.json());
+app.use(bodyParser.json()); 
 
 const personroutes=require('./router/personroutes.js');
 app.use('/person',personroutes);
@@ -176,7 +176,7 @@ app.get('/',(req,res)=>{
 
 
 
-
+const port = process.env.port || 3000; 
 app.listen(port,()=>{
     console.log("hi there this is room of your waiter");
 });
